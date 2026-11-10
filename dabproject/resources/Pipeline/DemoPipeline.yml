@@ -1,0 +1,15 @@
+resources:
+  pipelines:
+    pipeline_demo_pipeline:
+      name: Demo_pipeline
+      libraries:
+        - glob:
+            include: ../../src/pipelines/Demo_pipeline/transformations/**
+      schema: bronze
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: ${var.Catalog_name}
+      serverless: true
+      root_path: ../../src/pipelines/Demo_pipeline
